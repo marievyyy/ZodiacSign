@@ -1,0 +1,2 @@
+# ZodiacSign
+Simple Javascript Application
