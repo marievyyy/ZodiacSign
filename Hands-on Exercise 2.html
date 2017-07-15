@@ -1,0 +1,203 @@
+<html>
+<head>
+	<title>Hands On 2</title>
+	
+	<style>
+		body {
+			text-align:center;
+			font-family:helvetica;
+			background-repeat:no-repeat;
+			background-position:top;
+			background-attachment:fixed;
+			height:400px;
+			}
+		div {
+			margin: 0px auto;}
+		body img {
+			vertical-align:middle;
+		}
+		p {
+			font-size:40;}
+		h1 {
+			font-size:70px;
+			font-weight:bold;
+			color:#ffffff;
+			text-shadow:2px 2px 2px #888;
+			margin-top:230px;
+			margin-bottom:0px;
+			font-family:"Sunday";
+			}
+		h5 {
+			font-size:20px;
+			color:#ffffff;
+			text-shadow:2px 2px 2px #888;
+			font-family:"Sunday";
+			}
+		#start {
+			margin-top:1px;
+			font-family:Sunday;
+			cursor: pointer;
+		}
+		div {
+			font-size:20px;
+			font-family:Sunday;
+			color:#ffffff;
+			margin-top:250px;
+			max-width:1130px;
+			align:center;
+			}
+	</style>
+
+
+	<script language="JavaScript">
+	function promptMessage(){
+		var month = prompt("What's your birth month?", "january").toUpperCase().trim();
+		var day = prompt("What's your birth day?", "dd");
+		var year = prompt("What's your birth year?", "yyyy");
+
+		
+		//Calling getZodiac function
+		var zodiac_sign = getZodiac(month, day);
+		
+		// for zodiac sign
+		function getZodiac(mos, bday){
+			
+			var zodiacsgn = ["Capricon", "Aquarius", "Pisces", "Aries", "Taurus",
+			"Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"];
+			var error = " You enter an invalid input!";
+			var leap = "You enter an invalid input! Not a leap year";
+			
+			if((mos == "DECEMBER" && bday >= 22 && bday<32) || (mos == "JANUARY" && bday <= 21 && bday>0)) {
+				return zodiacsgn[0];
+			} else if ((mos == "JANUARY" && bday >= 21 && bday<32) || (mos == "FEBRUARY" && bday <=19 && bday>0)) {
+				return zodiacsgn[1];
+			}else if ((mos == "FEBRUARY" && bday >= 20 && bday <30) || ( mos == "MARCH" && bday <=20 && bday>0)) {
+				if (year % 4 == 0){
+					return zodiacsgn[2];
+				} else {
+					return leap;
+					}
+			}else if (( year % 4 == 0 && mos == "FEBRUARY" && bday == 29) || ( mos == "MARCH" && bday <=20 && bday>0)) {
+				return zodiacsgn[2];
+			}else if ((mos == "MARCH" && bday >=21 && bday<32) || ( mos =="APRIL" && bday <=19 && bday>0)) {
+				return zodiacsgn[3];
+			}else if ((mos == "APRIL" && bday >= 20 && bday<31) || ( mos == "MAY" && bday <=20 && bday>0)) {
+				return zodiacsgn[4];
+			}else if ((mos == "MAY" && bday >=21 && bday<32) || ( mos == "JUNE" && bday <=21 && bday>0)) {
+				return zodiacsgn[5];
+			}else if ((mos == "JUNE" && bday >=22 && bday<31) || ( mos == "JULY" && bday <=21 && bday>0)) {
+				return zodiacsgn[6];
+			}else if ((mos == "JULY" && bday >=22 && bday<32) || ( mos == "AUGUST" && bday <=21 && bday>0)) {
+				return zodiacsgn[7];
+			}else if ((mos == "AUGUST" && bday >=22 && bday<32) || ( mos == "SEPTEMBER" && bday <=22 && bday>0)) {
+				return zodiacsgn[8];
+			}else if ((mos == "SEPTEMBER" && bday >=23 && bday<31) || ( mos == "OCTOBER" && bday <=22 && bday>0)) {
+				return zodiacsgn[9];
+			}else if ((mos == "OCTOBER" && bday >=23 && bday<32)|| ( mos == "NOVEMBER" && bday <=21 && bday>0)) {
+				return zodiacsgn[10];
+			}else if ((mos == "NOVEMBER" && bday >=22  && bday<31) || ( mos == "DECEMBER" && bday <=21 && bday>0)) {
+				return zodiacsgn[11];
+			}else {
+				return error;
+			}
+		}	
+		
+		
+		// birthstone and flower
+		var stone = "Invalid input";
+		var flower = "Invalid input";
+
+		switch(month){
+			case "JANUARY":
+				stone = "Garnet" + "<img src=\"images/jan1.png\">";
+				flower ="Carnation" + "<img src=\"images/carnation.png\">";
+				break;
+			case "FEBRUARY":
+				stone = "Amethyst" + "<img src=\"images/feb1.png\">";
+				flower ="Violet" + "<img src=\"images/violet.png\">";
+				break;
+			case "MARCH":
+				stone = "Aquamarine" + "<img src=\"images/march1.png\">";
+				flower ="Jonquil" + "<img src=\"images/jonquil.png\">";
+				break;
+			case "APRIL":
+				stone = "Diamond" + "<img src=\"images/april1.png\">";
+				flower ="Sweet Pea" + "<img src=\"images/sweet pea.png\">";
+				break;
+			case "MAY":
+				stone = "Emerald" + "<img src=\"images/may1.png\">";
+				flower ="Lily of the Valley" + "<img src=\"images/lily of the valley.png\">";
+				break;
+			case "JUNE":
+				stone = "Pearl" + "<img src=\"images/june1.png\">";
+				flower ="Rose" + "<img src=\"images/rose.png\">";
+				break;
+			case "JULY":
+				stone = "Ruby" + "<img src=\"images/july1.png\">";
+				flower ="Larkspur" + "<img src=\"images/larkspur.png\">";
+				break;
+			case "AUGUST":
+				stone = "Peridot" + "<img src=\"images/aug1.png\">";
+				flower ="Gladiola" + "<img src=\"images/gladiola.png\">";
+				break;
+			case "SEPTEMBER":
+				stone = "Sapphire" + "<img src=\"images/sept1.png\">";
+				flower ="Aster" + "<img src=\"images/aster.png\">";
+				break;
+			case "OCTOBER":
+				stone = "Opal" + "<img src=\"images/oct1.png\">";
+				flower ="Calendula"+ "<img src=\"images/calendula.png\">";
+				break;
+			case "NOVEMBER":
+				stone = "Topaz" + "<img src=\"images/nov1.png\">";
+				flower = "Chrysanthemum" + "<img src=\"images/Chrysanthemum.png\">"; 
+				break;
+			case "DECEMBER":
+				stone = "Turquoise" + "<img src=\"images/dec1.png\">";
+				flower = "Narcissus" + "<img src=\"images/Narcissus.png\">"; 
+				break;		
+		}
+		
+		//for chinese zodiac sign
+		var czodiac = year%12;
+		var sign = " You enter an invalid input!";
+
+		switch(czodiac){
+
+			case 0: sign = "Monkey" + "<img src=\"images/monkey1.png\">"; break;
+			case 1: sign = "Rooster" + "<img src=\"images/chicken1.png\">"; break;
+			case 2: sign = "Dog" + "<img src=\"images/dog1.png\">"; break;
+			case 3: sign = "Pig" + "<img src=\"images/pig1.png\">"; break;
+			case 4: sign = "Rat" + "<img src=\"images/rat1.png\">"; break;
+			case 5: sign = "Ox" + "<img src=\"images/ox1.png\">"; break;
+			case 6: sign = "Tiger" + "<img src=\"images/tiger1.png\">"; break;
+			case 7: sign = "Rabbit" + "<img src=\"images/rabbit1.png\">"; break;
+			case 8: sign = "Dragon" + "<img src=\"images/dragon1.png\">"; break;
+			case 9: sign = "Snake" + "<img src=\"images/snake1.png\">"; break;
+			case 10: sign = "Horse" + "<img src=\"images/horse1.png\">"; break;
+			case 11: sign = "Sheep" + "<img src=\"images/goat1.png\">"; break;
+
+		}
+		document.getElementById("chinese").innerHTML="You were born under the Chinese Zodiac Sign: " + sign;
+		document.getElementById("astro").innerHTML="Your Astrological Zodiac Sign:  " + zodiac_sign;
+		document.getElementById("stone").innerHTML="Your Birth Stone: " + stone;
+		document.getElementById("flower").innerHTML="Your Birth flower: " + flower;
+		
+}
+</script>
+</head>
+
+<body background="images/space-purple-nebula-1-2560x14401.jpg" >
+	<h1>Your birthday</h1>
+	<h5>Let's find out what's on your birthday</h5>
+	<img id="start" onclick="promptMessage()" src="images/start.png" width=100px height=40px>
+	<p id="arrow"></p>
+	<div>	
+		<p id="chinese"></p>
+		<p id="astro"></p>
+		<p id="stone"></p>
+		<p id="flower"></p>
+	</div>
+</body>
+
+</html>

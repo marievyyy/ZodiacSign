@@ -1,0 +1,113 @@
+<html>
+<head><title>Watching Hands-on Episode 2 English Sub</title></head>
+<body>
+<script language="JavaScript">
+	var month = parseInt(prompt("Enter your birth month in number", "0");
+	var day = parseInt(prompt("Enter your birth day", "0");
+	var year = parseInt(prompt("Enter your birth year", "0");
+	
+	//for the chinese zodiac sign
+	var re_year = year%12;
+	var sign = "Error";
+	switch(re_year){
+		case 6: sign = "Tiger"; break;
+		case 7: sign = "Rabbit"; break;
+		case 8: sign = "Dragon"; break;
+		case 9: sign = "Snake"; break;
+		case 10: sign = "Horse"; break;
+		case 11: sign = "Sheep"; break;
+		case 0: sign = "Monkey"; break;
+		case 1: sign = "Rooster"; break;
+		case 2: sign = "Dog"; break;
+		case 3: sign = "Pig"; break;
+		case 4: sign = "Rat"; break;
+		case 5: sign = "Ox"; break;
+	}
+	//for zodiac sign
+	var zsign = "Error";
+	var stone = "Error";
+	var flower = "Error";
+	
+	switch(month){
+		case 1:
+			stone = "Garnet"; 
+			flower ="Carnation";
+			if(day>0&&day<21) zsign="Capricorn";
+			else if(day>=21&&day<=31) zsign="Aquarius"; 
+			break;
+		case 2:
+			stone = "Amethyst"; 
+			flower ="Violet";
+			if(day>0&&day<21) zsign="Aquarius";
+			else if(day>=21&&day<=29) zsign="Pisces"; 
+			break;
+		case 3:
+			stone = "Aquamarine"; 
+			flower ="Jonquil";
+			if(day>0&&day<21) zsign="Pisces";
+			else if(day>=21&&day<=31) zsign="Aries"; 
+			break;
+		case 4:
+			stone = "Diamond"; 
+			flower ="Sweet Pea;
+			if(day>0&&day<21) zsign="Aries";
+			else if(day>=21&&day<=30) zsign="Taurus"; 
+			break;
+		case 5:
+			stone = "Emerald"; 
+			flower ="Lily of the Valley";
+			if(day>0&&day<21) zsign="Taurus";
+			else if(day>=21&&day<=31) zsign="Gemini"; 
+			break;
+		case 6:
+			stone = "Pearl"; 
+			flower ="Rose";
+			if(day>0&&day<21) zsign="Gemini";
+			else if(day>=21&&day<=30) zsign="Cancer"; 
+			break;
+		case 7:
+			stone = "Ruby"; 
+			flower ="Larkspur";
+			if(day>0&&day<21) zsign="Cancer";
+			else if(day>=21&&day<=31) zsign="Leo"; 
+			break;
+		case 8:
+			stone = "Peridot"; 
+			flower ="Gladiola";
+			if(day>0&&day<21) zsign="Leo";
+			else if(day>=21&&day<=31) zsign="Virgo"; 
+			break;
+		case  9:
+			stone = "Sapphire"; 
+			flower ="Aster";
+			if(day>0&&day<21) zsign="Virgo";
+			else if(day>=21&&day<=30) zsign="Libra"; 
+			break;
+		case 10:
+			stone = "Opal"; 
+			flower ="Celendula";
+			if(day>0&&day<21) zsign="Libra";
+			else if(day>=21&&day<=31) zsign="Scorpio"; 
+			break;
+		case 11:
+			stone = "Topaz"; 
+			flower = "Chrysanthemum";
+			if(day>0&&day<21) zsign="Scorpio";
+			else if(day>=21&&day<=30) zsign="Sagittarius"; 
+			break;
+		case 12:
+			stone = "Turquoise"; 
+			flower = "Narcissus";
+			if(day>0&&day<21) zsign="Sagittarius";
+			else if(day>=21&&day<=31) zsign="Capricorn"; 
+			break;		
+	}
+	
+	document.write("Chinese Zodiac Sign:" + sign + "<br>");
+	document.write("Zodiac Sign: "+ zsign + "<br>");
+	document.write("Birth stone: " + stone + "<br>");
+	document.write("Birth Flower: " + flower);
+</script>
+</body>
+
+</html>

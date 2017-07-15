@@ -1,0 +1,125 @@
+<html>
+<head><title>Hands On 2</title></head>
+<body background="C:\Users\norma_000\Desktop\Advance Web Computing\images\AstrologyHeader.jpg" 
+		style="text-align:center;font-family:helvetica;background-repeat:no-repeat;background-position:top;
+		background-attachment:fixed" >
+<h1 style="font-size:60px;font-weight:bold;color:#ffffff;text-shadow:2px 2px 2px #888;margin-top:60px"><font face="Allura">Hands On Exercise #2</font></h1>
+
+<script language="JavaScript">
+	var month = prompt("What's your birth month?", "january").toUpperCase();
+	var day = prompt("What's your birth day?", "dd");
+	var year = prompt("What's your birth year?", "yyyy");
+	
+	//Calling getZodiac function
+	var zodiac_sign = getZodiac(month, day);
+	
+	// for zodiac sign
+	function getZodiac(mos, bday){
+		
+		var zodiacsgn = ["Capricon", "Aquarius", "Pisces", "Aries", "Taurus",
+		"Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"];
+		var error = " You enter an invalid input!";
+		
+		if(mos == "DECEMBER" && bday >= 22 || mos == "JANUARY" && bday <= 21) {
+			return zodiacsgn[0];
+		} else if (mos == "JANUARY" && bday >= 21 ||  mos == "FEBRUARY" && bday <=19) {
+			return zodiacsgn[1];
+		}else if (mos == "FEBRUARY" && bday >=20 || mos == "MARCH" && bday <=20) {
+			return zodiacsgn[2];
+		}else if (mos == "MARCH" && bday >=21 || mos =="APRIL" && bday <=19) {
+			return zodiacsgn[3];
+		}else if (mos == "APRIL" && bday >=20 || mos == "MAY" && bday <=20) {
+			return zodiacsgn[4];
+		}else if (mos == "MAY" && bday >=21 || mos == "JUNE" && bday <=21) {
+			return zodiacsgn[5];
+		}else if (mos == "JUNE" && bday >=22 || mos == "JULY" && bday <=21) {
+			return zodiacsgn[6];
+		}else if (mos == "JULY" && bday >=22|| mos == "AUGUST" && bday <=21) {
+			return zodiacsgn[7];
+		}else if (mos == "AUGUST" && bday >=22 || mos == "SEPTEMBER" && bday <=22) {
+			return zodiacsgn[8];
+		}else if (mos == "SEPTEMBER" && bday >=23 || mos == "OCTOBER" && bday <=22) {
+			return zodiacsgn[9];
+		}else if (mos == "OCTOBER" && bday >=23 || mos == "NOVEMBER" && bday <=21) {
+			return zodiacsgn[10];
+		}else if (mos == "NOVEMBER" && bday >=22 || mos == "DECEMBER" && bday <=21) {
+			return zodiacsgn[11];
+		} else if(mos == "FEBRUARY" && bday > 29){
+				alert("February has only 29 days!");
+		}else if(mos == "APRIL" && bday > 30){
+				alert("April has only 30 days!");
+		}else if(mos == "JUNE" && bday > 30){
+				alert("June has only 30 days!");
+		}else if(mos == "SEPTEMBER" && bday > 30){
+				alert("September has only 30 days you dumb!");
+		}else if(mos == "NOVEMBER" && bday > 30){
+				alert("November has only 30 days you dumb!");
+		}else {
+			return error;
+		}
+	}
+	
+	// birthstone and flower
+	var stone = "Invalid input";
+	var flower = "Invalid input";
+
+	switch(month){
+		case "JANUARY":
+			stone = "Garnet"; flower ="Carnation"; break;
+		case "FEBRUARY":
+			stone = "Amethyst"; flower ="Violet"; break;
+		case "MARCH":
+			stone = "Aquamarine"; flower ="Jonquil"; break;
+		case "APRIL":
+			stone = "Diamond"; flower ="Sweet Pea"; break;
+		case "MAY":
+			stone = "Emerald"; flower ="Lily of the Valley"; break;
+		case "JUNE":
+			stone = "Pearl"; flower ="Rose"; break;
+		case "JULY":
+			stone = "Ruby"; flower ="Larkspur"; break;
+		case "AUGUST":
+			stone = "Peridot"; flower ="Gladiola"; break;
+		case "SEPTEMBER":
+			stone = "Sapphire"; flower ="Aster"; break;
+		case "OCTOBER":
+			stone = "Opal"; flower ="Celendula"; break;
+		case "NOVEMBER":
+			stone = "Topaz"; flower = "Chrysanthemum"; break;
+		case "DECEMBER":
+			stone = "Turquoise"; flower = "Narcissus"; break;		
+	}
+	
+	//for chinese zodiac sign
+	var czodiac = year%12;
+	var sign = " You enter an invalid input!";
+
+	switch(czodiac){
+
+		case 0: sign = "Monkey"; break;
+		case 1: sign = "Rooster"; break;
+		case 2: sign = "Dog"; break;
+		case 3: sign = "Pig"; break;
+		case 4: sign = "Rat"; break;
+		case 5: sign = "Ox"; break;
+		case 6: sign = "Tiger"; break;
+		case 7: sign = "Rabbit"; break;
+		case 8: sign = "Dragon"; break;
+		case 9: sign = "Snake"; break;
+		case 10: sign = "Horse"; break;
+		case 11: sign = "Sheep"; break;
+
+	}
+
+	
+	document.write("<h3><font face=cambria color=white>Your Chinese Zodiac Sign: </font></h3>" + sign.fontcolor("white").bold() +"<br>");
+	document.write("<h3><font face=cambria color=white>Your Western Zodiac Sign: </font></h3>"+ zodiac_sign.fontcolor("white").bold() + "<br>");
+	document.write("<h3><font face=cambria color=white>Your Birth Stone: </font></h3>" + stone.fontcolor("white").bold() + "<br>");
+	document.write("<h3><font face=cambria color=white>Your Birth Flower: </font></h3>" + flower.fontcolor("white").bold());
+	
+</script>
+
+<h6 style="text-align:right;margin-top:150px;color:white">Porras, Ivy Marie G. | BsCpE 4-3 | PUP Sta.Mesa </h6>
+</body>
+
+</html>
